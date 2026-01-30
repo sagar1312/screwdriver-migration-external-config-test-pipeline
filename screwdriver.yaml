@@ -2,7 +2,7 @@ childPipelines:
   scmUrls:
     - git@github.com:sagar1312/screwdriver-migration-external-config-test-pipeline.git#main:child-pipeline-alpha
     - git@github.com:sagar1312/screwdriver-migration-external-config-test-pipeline.git#main:child-pipeline-beta
-    - git@github.com:sagar1312/screwdriver-migration-external-config-child-pipeline-apple.git
+    - git@github.com:sagar1312/screwdriver-migration-external-config-child-pipeline-apple.git#main
 parameters:
   p1: p1
   p2:
