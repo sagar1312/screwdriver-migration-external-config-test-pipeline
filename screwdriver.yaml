@@ -13,7 +13,7 @@ jobs:
   main:
     image: node:20
     steps:
-      - secrets: echo A:$A_SECRET && echo B:$B_SECRET && echo C:$C_SECRET
+      - secrets: echo ALPHA_SECRET:$ALPHA_SECRET && echo BETA_SECRET:$BETA_SECRET && echo CHARLIE_SECRET:$CHARLIE_SECRET && echo DELTA_SECRET:$DELTA_SECRET && echo APPLE_SECRET:$APPLE_SECRET
       - step-from-github-parent: echo "Step from GitHub parent"
     requires: [~pr, ~commit]
     secrets:
