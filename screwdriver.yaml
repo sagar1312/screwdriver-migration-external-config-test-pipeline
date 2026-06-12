@@ -2,6 +2,7 @@ childPipelines:
   scmUrls:
     - git@github.com:sagar1312/screwdriver-migration-external-config-test-pipeline.git#main:child-pipeline-alpha
     - git@github.com:sagar1312/screwdriver-migration-external-config-test-pipeline.git#main:child-pipeline-beta
+    - git@github.com:sagar1312/screwdriver-migration-external-config-test-pipeline.git#main:child-pipeline-charlie
     - git@github.com:sagar1312/screwdriver-migration-external-config-child-pipeline-apple.git#main
 parameters:
   p1: p1
@@ -13,10 +14,13 @@ jobs:
     image: node:20
     steps:
       - secrets: echo A:$A_SECRET && echo B:$B_SECRET && echo C:$C_SECRET
+      - step-from-github-parent: echo "Step from GitHub parent"
     requires: [~pr, ~commit]
     secrets:
-      - A_SECRET
-      - B_SECRET
-      - C_SECRET
+      - ALPHA_SECRET
+      - BETA_SECRET
+      - CHARLIE_SECRET
+      - DELTA_SECRET
+      - APPLE_SECRET
     parameters:
       p3: p3
